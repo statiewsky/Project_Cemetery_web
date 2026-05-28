@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='about_sup.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ data.project_name }} - О проекте</title>
+
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back"> Назад</a>
+        <h1>{{ data.project_name }}</h1>
+        <div class="meta">{{ data.year }} -------------- {{ data.author }}</div>
+
+        <div class="card">
+            <h2>Описание</h2>
+            <p>{{ data.description }}</p>
+        </div>
+
+        <div class="card">
+            <h2>Стек технологий</h2>
+            <div class="tags">
+                {% for t in data.stack %}<span class="tag">{{ t }}</span>{% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

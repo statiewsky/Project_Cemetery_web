@@ -1,0 +1,81 @@
+.profile-container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.profile-card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+}
+
+.profile-header {
+    margin-bottom: 30px;
+}
+
+.avatar {
+    width: 90px;
+    height: 90px;
+    background: #252525;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    margin: 0 auto 15px;
+    border: 2px solid #444;
+}
+
+.profile-info h1 { margin: 0; color: #fff; font-size: 28px; }
+.username { color: #888; margin: 5px 0 0; font-size: 16px; }
+.joined { color: #555; margin: 8px 0 0; font-size: 13px; }
+
+.profile-stats {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #111;
+    border-radius: 10px;
+    border: 1px solid #2a2a2a;
+}
+
+.stat-num { display: block; font-size: 32px; font-weight: bold; color: #fff; }
+.stat-label { color: #888; font-size: 14px; }
+
+.profile-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.token-form { margin: 0; }
+.btn-token {
+    background: #2a2a2a;
+    color: #aaa;
+    border: 1px solid #444;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 14px;
+}
+.btn-token:hover { background: #333; color: #fff; border-color: #666; }
+
+.btn-primary {
+    background: #fff;
+    color: #000;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+.btn-primary:hover { background: #ddd; }
+
+@media (max-width: 600px) {
+    .profile-actions { flex-direction: column; }
+    .btn-token, .btn-primary { width: 100%; text-align: center; }
+}

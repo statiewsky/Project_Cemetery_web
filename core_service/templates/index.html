@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+    <link rel="icon" href="static/icon/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Project Cemetary</title>
+
+</head>
+<body>
+        <div class="wrapper">
+        <header class="container">
+            <span class="logo"> Project Cemetery</span>
+            <nav>
+                <ul>
+                    <li class="active"><a href="/">|Приветствие|</a> </li>
+                    <li><a href="/about">|О проекте|</a> </li>
+                    <li><a href="/feed">|Лента|</a> </li>
+                    <li><a href="/candles">|Свечи|</a> </li>
+                    <li><a href="/{{ session.username }}">|Аккаунт|</a></li>
+                    <li><a href="/publications">|Публикации|</a> </li>
+                    <li class="btn"><a href="/contacts">Contacts</a></li>
+                    <li class="btn"><a href="/logout" style="color: #fff ;">Выход</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+
+
+
+
+
+
+<!-- ОГЛАВЛЕНИЕ, ОСНОВНОЙ ТЕКСТ, ИЗОБРАЖЕНИЕ, КНОПКИ -->
+        <div class="hero container">
+            <div class="hero--info">
+                <h1> Похороните свой проект! </h1>
+                <p> Где-то в недрах GitHub пылится репозиторий, который начинался как «убийца конкурентов», но в итоге был заброшен. Мы меняем стек, выгораем, теряем фокус или просто понимаем: идея была сильной, но время ушло.</p>
+                <p>Но это не конец.</p>
+                <p>Здесь нет места стыду. Только память и шанс на вторую жизнь. «Кладбище проектов» — это место, где проваленные стартапы, недописанные библиотеки и проекты находят свой последний приют... или первый шаг к воскрешению.</p>
+                <p>R.I.P. — Rest In Peace, или Reboot In Progress?</p>
+                <a href="/login" class="btn">Вход</a>
+                <a href="/register" class="btn">Регистрация</a>
+            </div>
+            <img src="{{ url_for('static', filename='img/tombstone.svg') }}" alt="Cand">
+        </div>
+    </div>
+
+
+
+</body>
+</html>
+
+
+

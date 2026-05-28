@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icon/favicon.ico') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить проект - Project Cemetery</title>
+</head>
+<body>
+<div class="wrapper">
+    <header class="container">
+        <span class="logo"> Project Cemetery</span>
+        <nav>
+            <ul>
+                <li><a href="/">Приветствие</a></li>
+                <li><a href="/about">О проекте</a> </li>
+                <li><a href="/feed">Лента</a></li>
+                <li><a href="/candles">Свечи</a></li>
+                <li><a href="/<username>">Аккаунт</a> </li>
+                <li><a href="/publications">Публикации</a></li>
+                <li class="btn"><a href="/contacts">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container" style="padding: 80px ;">
+        <div style="max-width: 700px; margin: auto;">
+            <h1 style="text-align: center; margin-bottom: 15px; font-size: 35px;">Похоронить проект</h1>
+            <p style="text-align: center; margin-bottom: 40px;">Заполните памятную форму для вашего проекта</p>
+
+            <form method="POST" style="background: #1C1C1C; padding: 40px; border-radius: 20px;">
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 5px; ; font-size: 15px;">Название проекта</label>
+                    <input type="text" name="title"
+                           style="font-family: Playfair Display, serif;width: 90%; padding: 15px; border-radius: 5px;">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 5px; font-size: 15px;">Описание</label>
+                    <input type="text" name="description"
+                              style="font-family: Playfair Display, serif; width: 90%; padding: 15px; border-radius: 5px;">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 5px; font-size: 15px;">Причина провала</label>
+                    <input type="text" name="fail_reason"
+                              style="font-family: Playfair Display, serif; width: 90%; padding: 15px; border-radius: 5px;">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 5px; font-size: 15px;">Эпитафия (фраза на память)</label>
+                    <input type="text" name="epitaph"
+                           style="font-family: Playfair Display, serif; width: 90%; padding: 15px; border-radius: 5px;">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 5px; font-size: 15px;">Технологии</label>
+                    <input type="text" name="tech_stack" placeholder="Python, Flask, React..."
+                           style="font-family: Playfair Display, serif; width: 90%; padding: 15px; border-radius: 5px;">
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <label style="display: block; margin-bottom: 5px; font-size: 15px;">Стадия провала</label>
+                    <select name="fail_stage" style="font-family: Playfair Display, serif; width: 90%; padding: 15px; border-radius: 5px; font-size: 16px;">
+                        <option value="idea">Идея</option>
+                        <option value="prototype">Прототип</option>
+                        <option value="development">Разработка</option>
+                        <option value="testing">Тестирование</option>
+                        <option value="launch">Запуск</option>
+                        <option value="scaling">Расширение</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; background: #262626; color: #fff; border-radius: 5px; padding: 15px; font-size: 17px; cursor: pointer;">Установить надгробие</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

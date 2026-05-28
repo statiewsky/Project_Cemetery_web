@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icon/favicon.ico') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ user.name }} - Project Cemetery</title>
+</head>
+<body>
+<div class="wrapper">
+    <header class="container">
+        <span class="logo"> Project Cemetery</span>
+        <nav>
+            <ul>
+                <li><a href="/">|Приветствие|</a></li>
+                <li><a href="/about">|О проекте|</a></li>
+                <li><a href="/feed">|Лента|</a></li>
+                <li><a href="/candles">|Свечи|</a></li>
+                <li class="active"><a href="/{{ session.username }}">|Аккаунт|</a></li>
+                <li><a href="/publications">|Публикации|</a></li>
+                <li class="btn"><a href="/contacts">Contacts</a></li>
+                <li class="btn"><a href="/logout">Выход</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container profile-container">
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="profile-info">
+                    <h1>{{ user.name }}</h1>
+                    <p class="username">@{{ user.username }}</p>
+                    <p class="joined">Участник с {{ user.created_at | msk }}</p>
+                </div>
+            </div>
+                <div class="stat-box">
+                    <span class="stat-num">{{ user.projects_count }}</span>
+                    <span class="stat-label">Создано проектов</span>
+                </div>
+            </div>
+
+            <div class="profile-actions">
+                <form action="/{{ user.username }}/refresh-token" method="POST" class="token-form">
+                    <button type="submit" name="refresh_token" class="btn-token">
+                        Обновить JWT токен
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+
+.feed-container {
+    padding: 50px 0 100px;
+}
+
+
+
+.projects-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.project-title {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+
+
+.project-description {
+    font-size: 20px;
+    line-height: 2;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.project-tech {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #292929;
+    border-radius: 5px;
+}
+
+.tech-label {
+    font-weight: 600;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.tech-stack {
+    color: #fff;
+    font-size: 15px;
+}
+
+.card-footer {
+    margin-bottom: 10px;
+    padding: 10px;
+    color: #fff;
+}
+
+
+.no-projects {
+    text-align: center;
+    padding: 80px 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+    border: 2px
+}
+
+.no-projects p {
+    font-size: 20px;
+    color: #6E6E6E;
+    margin-bottom: 15px;
+}
+
+.no-projects .btn-add {
+    margin-top: 10px;
+}
+
+
+.filters-wrapper {
+    display: flex;
+    gap: 15px;
+
+}
+
+.filter-select, .filter-input {
+    padding: 10px 15px;
+    border-radius: 10px;
+    background: #1C1C1C;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Playfair Display', serif;
+}
+
+.search-container {
+    max-width: 900px;
+    margin: 0 auto 50px;
+    padding: 0 20px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    padding: 20px 25px;
+}
+
+
+
+.filters-wrapper {
+    gap: 10px;
+    margin-left: 635px;
+    margin-top: -280px;
+    position: relative;
+    z-index: 10;
+}

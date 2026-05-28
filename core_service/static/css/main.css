@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*шрифт*/
+body {
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    color:#fff;
+    font-size: 22px;
+    background: linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 20%, rgba(23, 23, 23, 1) 50%, rgba(9, 9, 9, 1) 80%, rgba(0, 0, 0, 1) 100%);
+}
+
+/*не подчеркивать ссылки*/
+a {
+    text-decoration: none;
+}
+
+/*изображение не вылезает за пределы блока*/
+img {
+    max-width: 100%;
+}
+
+/*задний фон*/
+.wrapper {
+    background: linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 20%, rgba(23, 23, 23, 1) 50%, rgba(9, 9, 9, 1) 80%, rgba(0, 0, 0, 1) 100%);
+    width: 100%;
+}
+
+/*отступы сбоку*/
+.container {
+    width: 1800px;
+    margin: 0 auto;
+}
+
+/*отступ сверху*/
+header{
+    padding: 50px 0;
+}
+
+/*лого*/
+header .logo {
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+/* навигация вправо, ширина блока 50% */
+header nav {
+    float: right;
+    width: 50%;
+}
+
+/* убираем стандарное отоброжение списка, элементы распологаются по flex, элементы раскинуты на всю щирину блока  */
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    position: relative;
+}
+
+/* обращение к каждому конкретному элементу, каждый элемент - строчный блок, */
+header nav ul li{
+    display: inline-block;
+}
+
+/*текст ссылок - белый*/
+header nav ul li a {
+    color: white;
+}
+
+/*эффект наведения на кнопку*/
+header nav ul li.active::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 5px;
+    background: #949494;
+    border-radius: 10px;
+    position: relative;
+    top: 4px;
+    left: 4px;
+}
+
+/*эффект наведения*/
+header nav ul li:not(.active):not(.btn) a:hover {
+    border-bottom: 3px solid #949494 ;
+}
+
+/*кнопка, цвет, внутренние отступы, скругление, переход*/
+header nav ul li.btn a{
+    background: #6E6E6E;
+    padding: 9px 17px;
+    border-radius: 5px;
+    transition: all 500ms ease;
+}
+
+/*эффект наведения на кнопку*/
+header nav ul li.btn a:hover {
+    background: #4D4D4D;
+}
+
+/*отступ основного текста снизу*/
+.hero {
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+/*основной текст в рамку*/
+.hero--info{
+    width: 850px;
+    padding-top: 60px;
+}
+
+/*текст оглавление в рамку*/
+.hero--info h1 {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+/*текст в рамку*/
+.hero--info p {
+    font-weight: 300;
+    line-height: 170%;
+    margin: 20px;
+    font-size: 20px;
+}
+
+/*кнопка*/
+.hero--info .btn {
+    background: #6E6E6E;
+    color: #fff;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-size: 17px;
+    margin-right: 150px;
+    position: relative;
+    bottom: -100px;
+    right: -100px;
+}
+
+/*эффект кнопки: отслеживание курсора, увеличение кнопки*/
+.hero--info .btn:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/*изображение, абсолютное позиционирование, отступ*/
+.hero img {
+    position: absolute;
+    top: 150px;
+    right: 0;
+}
+
+/*блок поля ввода*/
+.finder .block {
+    margin-top: 10px;
+    border-radius: 20px;
+    padding: 20px 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position:absolute;
+    right: 77px;
+    z-index: 2;
+    top: 700px;
+}
+
+/*поле ввода*/
+.finder .block input {
+    background: #fff;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    width: 300px;
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    padding: 30px 40px;
+    position: relative;
+    right: -90px;
+    z-index: 1;
+    font-size: 20px;
+    padding-right: 140px
+}
+
+/*кнопка Enter*/
+.finder .block button{
+    background: #6E6E6E;
+    padding: 15px 17px;
+    border-radius: 5px;
+    transition: all 500ms ease;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+/*Контакты*/
+.hero-contacts h1{
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    font-size: 35px;
+}
+
+.hero-contacts{
+    background: linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 20%, rgba(23, 23, 23, 1) 50%, rgba(9, 9, 9, 1) 80%, rgba(0, 0, 0, 1) 100%);
+}
+
+/*Котакты абзац*/
+.hero-contacts p{
+    text-align: center;
+}
+
+/*Котакты изображение*/
+.hero-contacts img{
+    display: block;
+    width: 100%;
+    margin-top: 1px;
+}
+
+/*Котакты данные*/
+.hero-contacts h2{
+    margin-top: 25px;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+
+.hero--feed{
+    width: 550px;
+    padding-top: -100px;
+}
+
+/*текст оглавление в рамку*/
+.hero--feed h1 {
+    font-size: 30px;
+    font-weight: 500;
+
+}
+
+/*текст в рамку*/
+.hero--feed p {
+    font-weight: 300;
+    line-height: 150%;
+    margin: 10px;
+    font-size: 20px;
+}
+

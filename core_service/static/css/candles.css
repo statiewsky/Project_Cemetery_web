@@ -1,0 +1,72 @@
+
+.candles-container {
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.candles-header {
+    margin-bottom: 20px;
+}
+
+.candles-header h1 {
+    color: #fff;
+    font-size: 32px;
+    margin: 0 0 10px;
+}
+
+.candles-header p {
+    color: #888;
+    margin: 0;
+}
+
+.candles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.candle-card {
+    background: #1a1a1a;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+
+.candle-card h3 {
+    margin: 0 0 10px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.candle-card p {
+    margin: 5px 0;
+    color: #fff;
+    font-size: 14px;
+}
+
+.candle-date {
+    color: #fff;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.no-candles {
+    text-align: center;
+    padding: 60px 20px;
+    background: #1a1a1a;
+    border-radius: 12px;
+    border: 1px dashed #444;
+    color: #fff;
+}
+
+.no-candles p {
+    margin: 0 0 15px;
+    font-size: 16px;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .candles-header h1 {
+        font-size: 24px;
+    }
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+    <link rel="icon" href="static/icon/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Project Cemetary</title>
+
+</head>
+<body>
+    <header class="container">
+        <span class="logo"> Project Cemetery</span>
+        <nav>
+            <ul>
+                <li><a href="/">|Приветствие|</a></li>
+                <li><a href="/about">|О проекте|</a></li>
+                <li><a href="/feed">|Лента|</a></li>
+                <li><a href="/candles">|Свечи|</a></li>
+                <li><a href="/{{ session.username }}">|Аккаунт|</a></li>
+                <li><a href="/publications">|Публикации|</a></li>
+                <li class="btn"><a href="/contacts">Contacts</a></li>
+                <li class="btn"><a href="/logout">Выход</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="container hero-contacts">
+        <h1> Свяжитесь с нами!</h1>
+        <p>Нам очень важна ваша обратная связь, чтобы данный сайт не оказался в этой ленте</p>
+        <h2> Email: daniil.kar.07@gmail.com</h2>
+        <h2> Telegram: statiewsky</h2>
+        <h2> Можно шепнуть на ухо </h2>
+        <img src="/static/img/contacts.png" alt="">
+    </div>
+
+
+</body>
+</html>

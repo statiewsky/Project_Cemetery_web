@@ -1,0 +1,7 @@
+{
+  "project_name": "Project Cemetery",
+  "description": "Цифровое кладбище для забытых и заброшенных проектов.",
+  "stack": ["Python", "Flask", "SQLite", "HTML/CSS/JS"],
+  "author": "Караваев Даниил",
+  "year": "2026"
+}

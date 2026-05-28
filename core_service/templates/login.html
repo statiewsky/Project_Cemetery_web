@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icon/favicon.ico') }}">
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+</head>
+<body>
+<div class="wrapper">
+    <header class="container">
+        <span class="logo"> Project Cemetery</span>
+        <nav>
+            <ul>
+                <li><a href="/">Приветствие</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container" style="padding: 100px 0;">
+        <div style="max-width: 400px; margin: 0 auto;">
+            <form method="POST" style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 10px;">
+                <input type="text" name="username" placeholder="Логин" required style="width: 90%; padding: 15px; margin-bottom: 15px; border-radius: 10px;">
+                <input type="password" name="password" placeholder="Пароль" required style="width: 90%; padding: 15px; margin-bottom: 20px; border-radius: 10px;">
+                <button type="submit" style="width: 100%; background: #6E6E6E; color: #fff; padding: 15px; border-radius: 5px; cursor: pointer;">Войти</button>
+            </form>
+
+            <p style="text-align: center; margin-top: 20px;"> Нет аккаунта? <a href="/register" style="color: #fff;">Зарегистрироваться</a></p>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/feed.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icon/favicon.ico') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лента - Project Cemetery</title>
+</head>
+<body>
+<div class="wrapper">
+    <header class="container">
+        <span class="logo"> Project Cemetery</span>
+        <nav>
+            <ul>
+                <li><a href="/">|Приветствие|</a> </li>
+                <li><a href="/about">|О проекте|</a> </li>
+                <li class="active"><a href="/feed">|Лента|</a> </li>
+                <li><a href="/candles">|Свечи|</a> </li>
+                <li><a href="/{{ session.username }}">|Аккаунт|</a> </li>
+                <li><a href="/publications">|Публикации|</a> </li>
+                <li class="btn"><a href="/contacts">Contacts</a></li>
+                <li class="btn"><a href="/logout" >Выход</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero container">
+        <div class="hero--info">
+            <h1 style="text-align">Лента проектов</h1>
+            <p>Здесь покоятся забытые проекты</p>
+            <a href="/project/add" class="btn">+ Добавить проект</a>
+        </div>
+    </div>
+
+    <div class="finder">
+        <form action="/feed" method="GET" class="search-form">
+            <div class="block">
+                <input style="top: -500px; right: 600px" type="text" name="q" placeholder= "Поиск" value="{{ query }}">
+                <button style="top: -500px; right: 700px" type="submit">Enter</button>
+            </div>
+
+            <div  class="filters-wrapper">
+                <select name="stage" class="filter-select">
+                    <option value="">Все стадии</option>
+                    <option value="idea" {% if stage == 'Идея' %}selected{% endif %}>Идея</option>
+                    <option value="prototype" {% if stage == 'Прототип' %}selected{% endif %}>Прототип</option>
+                    <option value="development" {% if stage == 'Разработка' %}selected{% endif %}>Разработка</option>
+                    <option value="testing" {% if stage == 'Тестирование' %}selected{% endif %}>Тестирование</option>
+                    <option value="launch" {% if stage == 'Запуск' %}selected{% endif %}>Запуск</option>
+                    <option value="scaling" {% if stage == 'Масштабирование' %}selected{% endif %}>Масштабирование</option>
+                </select>
+                <input  type="text" name="tech" placeholder="Технологии" value="{{ tech or '' }}" class="filter-input">
+            </div>
+        </form>
+    </div>
+
+    <div class="container" style="padding: 50px 0 100px;">
+        <div class="projects-list">
+            {% for project in projects %}
+            <a href="/project/{{ project.id }}" class="project-card-link">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h2 class="project-title">{{ project.title }}</h2>
+                        {% if project.fail_stage %}
+                        <span class="stage-badge">{{ project.fail_stage }}</span>
+                        {% endif %}
+                    </div>
+
+                    <p class="project-description">
+                        {{ project.description[:200] }}{% if project.description|length > 200 %}...{% endif %}
+                    </p>
+
+                    {% if project.tech_stack %}
+                    <div class="project-tech">
+                        <span class="tech-label">Стек:</span>
+                        <span class="tech-stack">{{ project.tech_stack }}</span>
+                    </div>
+                    {% endif %}
+
+                    <div class="card-footer">
+                        <span class="read-more">Открыть проект</span>
+                    </div>
+                </div>
+            </a>
+            {% else %}
+            <div class="no-projects">Проектов пока нет.</div>
+            {% endfor %}
+        </div>
+
+        {% if projects|length > 0 %}
+        <div class="pagination">
+            {% if page > 1 %}
+            <a href="?page={{ page-1 }}&q={{ query }}&stage={{ stage }}&tech={{ tech }}" class="page-link">← Назад</a>
+            {% endif %}
+            <span class="page-info">Страница {{ page }}</span>
+            {% if projects|length == 10 %}
+            <a href="?page={{ page+1 }}&q={{ query }}&stage={{ stage }}&tech={{ tech }}" class="page-link">Вперёд →</a>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+
+</script>
+
+</body>
+</html>

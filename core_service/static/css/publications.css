@@ -1,0 +1,61 @@
+
+
+
+.publications-list {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.publication-card {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+
+.pub-header {
+    display: flex;
+    padding-bottom: 15px;
+}
+
+.pub-title {
+    color: #fff;
+    font-size: 25px;
+    font-family: 'Playfair Display', serif;
+}
+
+.pub-date {
+    color: #fff;
+    font-size: 15px;
+    margin-left: 600px;
+}
+
+.pub-content {
+    line-height: 2;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.pub-meta {
+    margin-top: 15px;
+    padding-top: 15px;
+    font-size: 15px;
+    color: #888;
+}
+
+.meta-value {
+    color: #fff ;
+    font-weight: 500;
+}
+
+
+.no-publications {
+    text-align: center;
+    padding: 80px;
+    color: #fff;
+    background: #1a1a1a;
+    border-radius: 8px;
+}

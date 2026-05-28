@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/project_detail.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icon/favicon.ico') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Проекты - Project Cemetery</title>
+</head>
+<body>
+<div class="wrapper">
+    <header class="container">
+        <span class="logo"> Project Cemetery</span>
+        <nav>
+            <ul>
+                <li><a href="/">Приветствие</a></li>
+                <li><a href="/about">О проекте</a></li>
+                <li><a href="/feed">Лента</a></li>
+                <li><a href="/candles">Свечи</a></li>
+                <li><a href="/{{ session.username }}">Аккаунт</a></li>
+                <li><a href="/publications">Публикации</a></li>
+                <li class="btn"><a href="/contacts">Contacts</a></li>
+                {% if is_logged_in %}
+                    <li class="btn"><a href="/logout" style="color: #fff;">Выход</a></li>
+                {% else %}
+                    <li class="btn"><a href="/login">Вход</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <div class="project-detail-container">
+        <div class="project-detail">
+            <div class="detail-header">
+                <h1>{{ project.title }}</h1>
+                <div class="meta-info">
+                    <span>Автор: {{ project.author_name }}</span>
+                    <span>Стадия: {{ project.fail_stage or 'Не указана' }}</span>
+                    <span>{{ project.created_at | msk }}</span>
+                </div>
+            </div>
+
+            <div class="detail-content">
+                <p class="description">{{ project.description }}</p>
+
+                {% if project.fail_reason %}
+                <div class="info-box">
+                    <strong>Причина провала:</strong>
+                    <p>{{ project.fail_reason }}</p>
+                </div>
+                {% endif %}
+
+
+                {% if project.epitaph %}
+                <div class="info-box">
+                    <strong>Эпитафия:</strong>
+                <div class="epitaph">"{{ project.epitaph }}"</div>
+                </div>
+                {% endif %}
+
+
+                {% if project.tech_stack %}
+                <div class="info-box">
+                    <strong>Технологии:</strong>
+                    <p>{{ project.tech_stack }}</p>
+                </div>
+                {% endif %}
+            </div>
+
+
+            <div class="actions">
+                <form action="/project/{{ project.id }}/candle" method="POST">
+                    <button type="submit" class="candle-btn">
+                        Поставить свечу
+                    </button>
+                </form>
+                <span class="candle-count">
+                    Зажжено свечей: <strong>{{ candles_count }}</strong>
+                </span>
+            </div>
+
+            <div class="comments-section">
+                <h3> Комментарии</h3>
+
+                <form action="/project/{{ project.id }}/comment" method="POST" class="comment-form">
+                    <textarea name="message" placeholder="Напишите комментарий" required></textarea>
+                    <button type="submit">Отправить</button>
+                </form>
+
+                <div class="comments-list">
+                    {% for comment in comments %}
+                    <div class="comment-item">
+                        <div class="comment-author">
+                            <span>{{ comment.username}}</span>
+                            <span class="comment-date">{{ project.created_at | msk }}</span>
+                        </div>
+                        <div class="comment-text">{{ comment.message }}</div>
+                    </div>
+                    {% else %}
+                    <div class="no-comments">
+                        <p>Комментариев пока нет. Будьте первым!</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="back-link">
+                <a href="/feed">Вернуться в ленту</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
